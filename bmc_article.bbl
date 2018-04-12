@@ -1,0 +1,483 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{11}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{goble2008data}
+\begin{barticle}
+\bauthor{\bsnm{Goble}, \binits{C.}},
+\bauthor{\bsnm{Stevens}, \binits{R.}},
+\bauthor{\bsnm{Hull}, \binits{D.}},
+\bauthor{\bsnm{Wolstencroft}, \binits{K.}},
+\bauthor{\bsnm{Lopez}, \binits{R.}}:
+\batitle{Data curation+ process curation= data integration+ science}.
+\bjtitle{Briefings in bioinformatics}
+\bvolume{9}(\bissue{6}),
+\bfpage{506}--\blpage{517}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem{salgado2012myminer}
+\begin{barticle}
+\bauthor{\bsnm{Salgado}, \binits{D.}},
+\bauthor{\bsnm{Krallinger}, \binits{M.}},
+\bauthor{\bsnm{Depaule}, \binits{M.}},
+\bauthor{\bsnm{Drula}, \binits{E.}},
+\bauthor{\bsnm{Tendulkar}, \binits{A.V.}},
+\bauthor{\bsnm{Leitner}, \binits{F.}},
+\bauthor{\bsnm{Valencia}, \binits{A.}},
+\bauthor{\bsnm{Marcelle}, \binits{C.}}:
+\batitle{Myminer: a web application for computer-assisted biocuration and text
+  annotation}.
+\bjtitle{Bioinformatics}
+\bvolume{28}(\bissue{17}),
+\bfpage{2285}--\blpage{2287}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{salimi2006biocurator}
+\begin{barticle}
+\bauthor{\bsnm{Salimi}, \binits{N.}},
+\bauthor{\bsnm{Vita}, \binits{R.}}:
+\batitle{The biocurator: connecting and enhancing scientific data}.
+\bjtitle{PLoS computational biology}
+\bvolume{2}(\bissue{10}),
+\bfpage{125}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{szostak2015construction}
+\begin{botherref}
+\oauthor{\bsnm{Szostak}, \binits{J.}},
+\oauthor{\bsnm{Ansari}, \binits{S.}},
+\oauthor{\bsnm{Madan}, \binits{S.}},
+\oauthor{\bsnm{Fluck}, \binits{J.}},
+\oauthor{\bsnm{Talikka}, \binits{M.}},
+\oauthor{\bsnm{Iskandar}, \binits{A.}},
+\oauthor{\bsnm{De~Leon}, \binits{H.}},
+\oauthor{\bsnm{Hofmann-Apitius}, \binits{M.}},
+\oauthor{\bsnm{Peitsch}, \binits{M.C.}},
+\oauthor{\bsnm{Hoeng}, \binits{J.}}:
+Construction of biological networks from unstructured information based on a
+  semi-automated curation workflow.
+Database
+\textbf{2015}
+(2015)
+\end{botherref}
+\endbibitem
+
+%%% 5
+\bibitem{gostev2011biosample}
+\begin{barticle}
+\bauthor{\bsnm{Gostev}, \binits{M.}},
+\bauthor{\bsnm{Faulconbridge}, \binits{A.}},
+\bauthor{\bsnm{Brandizi}, \binits{M.}},
+\bauthor{\bsnm{Fernandez-Banet}, \binits{J.}},
+\bauthor{\bsnm{Sarkans}, \binits{U.}},
+\bauthor{\bsnm{Brazma}, \binits{A.}},
+\bauthor{\bsnm{Parkinson}, \binits{H.}}:
+\batitle{The biosample database (biosd) at the european bioinformatics
+  institute}.
+\bjtitle{Nucleic acids research}
+\bvolume{40}(\bissue{D1}),
+\bfpage{64}--\blpage{70}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{faulconbridge2013updates}
+\begin{barticle}
+\bauthor{\bsnm{Faulconbridge}, \binits{A.}},
+\bauthor{\bsnm{Burdett}, \binits{T.}},
+\bauthor{\bsnm{Brandizi}, \binits{M.}},
+\bauthor{\bsnm{Gostev}, \binits{M.}},
+\bauthor{\bsnm{Pereira}, \binits{R.}},
+\bauthor{\bsnm{Vasant}, \binits{D.}},
+\bauthor{\bsnm{Sarkans}, \binits{U.}},
+\bauthor{\bsnm{Brazma}, \binits{A.}},
+\bauthor{\bsnm{Parkinson}, \binits{H.}}:
+\batitle{Updates to biosamples database at european bioinformatics institute}.
+\bjtitle{Nucleic acids research}
+\bvolume{42}(\bissue{D1}),
+\bfpage{50}--\blpage{52}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{wilkinson2016fair}
+\begin{botherref}
+\oauthor{\bsnm{Wilkinson}, \binits{M.D.}},
+\oauthor{\bsnm{Dumontier}, \binits{M.}},
+\oauthor{\bsnm{Aalbersberg}, \binits{I.J.}},
+\oauthor{\bsnm{Appleton}, \binits{G.}},
+\oauthor{\bsnm{Axton}, \binits{M.}},
+\oauthor{\bsnm{Baak}, \binits{A.}},
+\oauthor{\bsnm{Blomberg}, \binits{N.}},
+\oauthor{\bsnm{Boiten}, \binits{J.-W.}},
+\oauthor{\bparticle{da} \bsnm{Silva~Santos}, \binits{L.B.}},
+\oauthor{\bsnm{Bourne}, \binits{P.E.}}, et al.:
+The fair guiding principles for scientific data management and stewardship.
+Scientific data
+\textbf{3}
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 8
+\bibitem{edgar2002gene}
+\begin{barticle}
+\bauthor{\bsnm{Edgar}, \binits{R.}},
+\bauthor{\bsnm{Domrachev}, \binits{M.}},
+\bauthor{\bsnm{Lash}, \binits{A.E.}}:
+\batitle{Gene expression omnibus: Ncbi gene expression and hybridization array
+  data repository}.
+\bjtitle{Nucleic acids research}
+\bvolume{30}(\bissue{1}),
+\bfpage{207}--\blpage{210}
+(\byear{2002})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{barrett2012ncbi}
+\begin{barticle}
+\bauthor{\bsnm{Barrett}, \binits{T.}},
+\bauthor{\bsnm{Wilhite}, \binits{S.E.}},
+\bauthor{\bsnm{Ledoux}, \binits{P.}},
+\bauthor{\bsnm{Evangelista}, \binits{C.}},
+\bauthor{\bsnm{Kim}, \binits{I.F.}},
+\bauthor{\bsnm{Tomashevsky}, \binits{M.}},
+\bauthor{\bsnm{Marshall}, \binits{K.A.}},
+\bauthor{\bsnm{Phillippy}, \binits{K.H.}},
+\bauthor{\bsnm{Sherman}, \binits{P.M.}},
+\bauthor{\bsnm{Holko}, \binits{M.}}, \betal:
+\batitle{Ncbi geo: archive for functional genomics data sets{\'o}update}.
+\bjtitle{Nucleic acids research}
+\bvolume{41}(\bissue{D1}),
+\bfpage{991}--\blpage{995}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{hu2017cleaning}
+\begin{barticle}
+\bauthor{\bsnm{Hu}, \binits{W.}},
+\bauthor{\bsnm{Zaveri}, \binits{A.}},
+\bauthor{\bsnm{Qiu}, \binits{H.}},
+\bauthor{\bsnm{Dumontier}, \binits{M.}}:
+\batitle{Cleaning by clustering: methodology for addressing data quality issues
+  in biomedical metadata}.
+\bjtitle{BMC bioinformatics}
+\bvolume{18}(\bissue{1}),
+\bfpage{415}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{brazma2001minimum}
+\begin{barticle}
+\bauthor{\bsnm{Brazma}, \binits{A.}},
+\bauthor{\bsnm{Hingamp}, \binits{P.}},
+\bauthor{\bsnm{Quackenbush}, \binits{J.}},
+\bauthor{\bsnm{Sherlock}, \binits{G.}},
+\bauthor{\bsnm{Spellman}, \binits{P.}},
+\bauthor{\bsnm{Stoeckert}, \binits{C.}},
+\bauthor{\bsnm{Aach}, \binits{J.}},
+\bauthor{\bsnm{Ansorge}, \binits{W.}},
+\bauthor{\bsnm{Ball}, \binits{C.A.}},
+\bauthor{\bsnm{Causton}, \binits{H.C.}}, \betal:
+\batitle{Minimum information about a microarray experiment (miame){\'o}toward
+  standards for microarray data}.
+\bjtitle{Nature genetics}
+\bvolume{29}(\bissue{4}),
+\bfpage{365}
+(\byear{2001})
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Data curation+ process curation= data integration+
+  science</p></title>
+  <aug>
+    <au><snm>Goble</snm><fnm>C</fnm></au>
+    <au><snm>Stevens</snm><fnm>R</fnm></au>
+    <au><snm>Hull</snm><fnm>D</fnm></au>
+    <au><snm>Wolstencroft</snm><fnm>K</fnm></au>
+    <au><snm>Lopez</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Briefings in bioinformatics</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2008</pubdate>
+  <volume>9</volume>
+  <issue>6</issue>
+  <fpage>506</fpage>
+  <lpage>-517</lpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>MyMiner: a web application for computer-assisted biocuration and
+  text annotation</p></title>
+  <aug>
+    <au><snm>Salgado</snm><fnm>D</fnm></au>
+    <au><snm>Krallinger</snm><fnm>M</fnm></au>
+    <au><snm>Depaule</snm><fnm>M</fnm></au>
+    <au><snm>Drula</snm><fnm>E</fnm></au>
+    <au><snm>Tendulkar</snm><fnm>AV</fnm></au>
+    <au><snm>Leitner</snm><fnm>F</fnm></au>
+    <au><snm>Valencia</snm><fnm>A</fnm></au>
+    <au><snm>Marcelle</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2012</pubdate>
+  <volume>28</volume>
+  <issue>17</issue>
+  <fpage>2285</fpage>
+  <lpage>-2287</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>The biocurator: connecting and enhancing scientific
+  data</p></title>
+  <aug>
+    <au><snm>Salimi</snm><fnm>N</fnm></au>
+    <au><snm>Vita</snm><fnm>R</fnm></au>
+  </aug>
+  <source>PLoS computational biology</source>
+  <publisher>Public Library of Science</publisher>
+  <pubdate>2006</pubdate>
+  <volume>2</volume>
+  <issue>10</issue>
+  <fpage>e125</fpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>Construction of biological networks from unstructured information
+  based on a semi-automated curation workflow</p></title>
+  <aug>
+    <au><snm>Szostak</snm><fnm>J</fnm></au>
+    <au><snm>Ansari</snm><fnm>S</fnm></au>
+    <au><snm>Madan</snm><fnm>S</fnm></au>
+    <au><snm>Fluck</snm><fnm>J</fnm></au>
+    <au><snm>Talikka</snm><fnm>M</fnm></au>
+    <au><snm>Iskandar</snm><fnm>A</fnm></au>
+    <au><snm>De Leon</snm><fnm>H</fnm></au>
+    <au><snm>Hofmann Apitius</snm><fnm>M</fnm></au>
+    <au><snm>Peitsch</snm><fnm>MC</fnm></au>
+    <au><snm>Hoeng</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Database</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2015</pubdate>
+  <volume>2015</volume>
+</bibl>
+
+<bibl id="B5">
+  <title><p>The BioSample database (BioSD) at the european bioinformatics
+  institute</p></title>
+  <aug>
+    <au><snm>Gostev</snm><fnm>M</fnm></au>
+    <au><snm>Faulconbridge</snm><fnm>A</fnm></au>
+    <au><snm>Brandizi</snm><fnm>M</fnm></au>
+    <au><snm>Fernandez Banet</snm><fnm>J</fnm></au>
+    <au><snm>Sarkans</snm><fnm>U</fnm></au>
+    <au><snm>Brazma</snm><fnm>A</fnm></au>
+    <au><snm>Parkinson</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2011</pubdate>
+  <volume>40</volume>
+  <issue>D1</issue>
+  <fpage>D64</fpage>
+  <lpage>-D70</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Updates to BioSamples database at european bioinformatics
+  institute</p></title>
+  <aug>
+    <au><snm>Faulconbridge</snm><fnm>A</fnm></au>
+    <au><snm>Burdett</snm><fnm>T</fnm></au>
+    <au><snm>Brandizi</snm><fnm>M</fnm></au>
+    <au><snm>Gostev</snm><fnm>M</fnm></au>
+    <au><snm>Pereira</snm><fnm>R</fnm></au>
+    <au><snm>Vasant</snm><fnm>D</fnm></au>
+    <au><snm>Sarkans</snm><fnm>U</fnm></au>
+    <au><snm>Brazma</snm><fnm>A</fnm></au>
+    <au><snm>Parkinson</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2013</pubdate>
+  <volume>42</volume>
+  <issue>D1</issue>
+  <fpage>D50</fpage>
+  <lpage>-D52</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>The FAIR Guiding Principles for scientific data management and
+  stewardship</p></title>
+  <aug>
+    <au><snm>Wilkinson</snm><fnm>MD</fnm></au>
+    <au><snm>Dumontier</snm><fnm>M</fnm></au>
+    <au><snm>Aalbersberg</snm><fnm>IJ</fnm></au>
+    <au><snm>Appleton</snm><fnm>G</fnm></au>
+    <au><snm>Axton</snm><fnm>M</fnm></au>
+    <au><snm>Baak</snm><fnm>A</fnm></au>
+    <au><snm>Blomberg</snm><fnm>N</fnm></au>
+    <au><snm>Boiten</snm><fnm>JW</fnm></au>
+    <au><snm>Silva Santos</snm><fnm>LB</fnm></au>
+    <au><snm>Bourne</snm><fnm>PE</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Scientific data</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2016</pubdate>
+  <volume>3</volume>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Gene Expression Omnibus: NCBI gene expression and hybridization
+  array data repository</p></title>
+  <aug>
+    <au><snm>Edgar</snm><fnm>R</fnm></au>
+    <au><snm>Domrachev</snm><fnm>M</fnm></au>
+    <au><snm>Lash</snm><fnm>AE</fnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2002</pubdate>
+  <volume>30</volume>
+  <issue>1</issue>
+  <fpage>207</fpage>
+  <lpage>-210</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>NCBI GEO: archive for functional genomics data
+  sets{\'o}update</p></title>
+  <aug>
+    <au><snm>Barrett</snm><fnm>T</fnm></au>
+    <au><snm>Wilhite</snm><fnm>SE</fnm></au>
+    <au><snm>Ledoux</snm><fnm>P</fnm></au>
+    <au><snm>Evangelista</snm><fnm>C</fnm></au>
+    <au><snm>Kim</snm><fnm>IF</fnm></au>
+    <au><snm>Tomashevsky</snm><fnm>M</fnm></au>
+    <au><snm>Marshall</snm><fnm>KA</fnm></au>
+    <au><snm>Phillippy</snm><fnm>KH</fnm></au>
+    <au><snm>Sherman</snm><fnm>PM</fnm></au>
+    <au><snm>Holko</snm><fnm>M</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2012</pubdate>
+  <volume>41</volume>
+  <issue>D1</issue>
+  <fpage>D991</fpage>
+  <lpage>-D995</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Cleaning by clustering: methodology for addressing data quality
+  issues in biomedical metadata</p></title>
+  <aug>
+    <au><snm>Hu</snm><fnm>W</fnm></au>
+    <au><snm>Zaveri</snm><fnm>A</fnm></au>
+    <au><snm>Qiu</snm><fnm>H</fnm></au>
+    <au><snm>Dumontier</snm><fnm>M</fnm></au>
+  </aug>
+  <source>BMC bioinformatics</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2017</pubdate>
+  <volume>18</volume>
+  <issue>1</issue>
+  <fpage>415</fpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Minimum information about a microarray experiment
+  (MIAME){\'o}toward standards for microarray data</p></title>
+  <aug>
+    <au><snm>Brazma</snm><fnm>A</fnm></au>
+    <au><snm>Hingamp</snm><fnm>P</fnm></au>
+    <au><snm>Quackenbush</snm><fnm>J</fnm></au>
+    <au><snm>Sherlock</snm><fnm>G</fnm></au>
+    <au><snm>Spellman</snm><fnm>P</fnm></au>
+    <au><snm>Stoeckert</snm><fnm>C</fnm></au>
+    <au><snm>Aach</snm><fnm>J</fnm></au>
+    <au><snm>Ansorge</snm><fnm>W</fnm></au>
+    <au><snm>Ball</snm><fnm>CA</fnm></au>
+    <au><snm>Causton</snm><fnm>HC</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nature genetics</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2001</pubdate>
+  <volume>29</volume>
+  <issue>4</issue>
+  <fpage>365</fpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment
