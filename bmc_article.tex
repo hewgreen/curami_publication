@@ -229,10 +229,17 @@ Curami aims to both identify erroneous attributes in the dataset and find a suit
 
 During initialization, each sample record is requested via the BioSamples Application Programming Interface (API) and parsed into four input files. A CSV list of unique attributes and their frequency of usage, a CSV list of sample records (including the BioSamples ID and the attributes the sample contains), a CSV list of attribute pairs that co-occur within a sample record at least once with the frequency of the co-occurrence and a JSON file with unique values and their frequency of use for each unique attribute. The second step of initialisation uses these four files to create a network using the Python package networkX \cite{networkx} which is exported as a .gexf for later use by the co-occurrences analysis script. This graph contains nodes representing individual attributes and weighted edges with co-occurrence can also be instantly visualised using Gephi \cite{bastian2009gephi} and explored using various inbuilt force-directed layout algorithms \cite{jacomy2014forceatlas2} (see Figure \cite{fig:gephi}).
 
-Curami has a tiered modular design to aid fungibility of the code (see figure \ref{fig:workflow}). The 29,751 attributes expands into 885,092,250 potential unique pairs, excluding self-matches. Therefore, the initial tier (high throughput pairing) filters this high number of potential pairs into a smaller number that is able to undergo more rigorous similarity computation. This layer designed to be optimised for throughput and therefore may only rely on a low computational burden for pair selection. As such the selected pairs at this stage are most likely not mergeable (synonyms).
+Curami has a tiered modular design to aid fungibility of the code (see figure \ref{fig:workflow}). The 29,751 attributes expands into 885,092,250 potential unique pairs, excluding self-matches. Therefore, the initial tier (high throughput pairing) filters this high number of potential pairs into a smaller number that is able to undergo more rigorous similarity computation. This layer is designed to be optimised for throughput and therefore may only rely on a low computational burden for pair selection. As such the selected pairs at this stage are most likely not mergeable (synonyms).
 
-Once attributes pairs have been filtered to a more manageable number, various analysis modules calculate a number of similarity features for each pair. The modular design is critical to encourage future development of new orthogonal approaches. One example would be a module supporting pairwise ontology analysis. At the time of publication Curami uses four modules for feature calculation mismatch typing, lexical similarity, sample co-occurrence and value similarity.
+Once attribute pairs have been filtered to a more manageable number the second tier (pairwise analysis) can be performed. In this tier a range of analysis modules calculate various similarity features for each pair. The modular design is critical to encourage future development of new orthogonal approaches. One example of an additional module could be pairwise ontology comparisons. At the time of publication, Curami has four modules for feature calculation. These are mismatch typing, lexical similarity, sample co-occurrence and value similarity. These modules calculate 13 core features outlined in table \ref{table:features}. This analysis dataset is stored in a graph database using Neo4J.
 
+The workflow thus far has been automated and can therefore be triggered at regular intervals to keep up to date. The user interface is a flask application capable of navigating the attribute pairs, reviewing analysis and making curation decisions. For each pair the user can choose not to merge, merge the least frequently used attribute into the more popular of the pair or to merge in the reverse direction. This simple interface takes inspiration from gamification concept in web app design by facilitating quick decision making and showing individual curators their comparative impact statistics. These decisions are also captured in the graph database and form the basis of both export of curation objects directly to the BioSamples API and training data for later machine learning and tuning.
+
+\subsection*{Leveraging Machine Learning by Design}
+
+The workflow has the capacity to leverage manual curation effort
+
+\subsection*{}
 %The Initially, to reduce this number for feature analysis pairs with a Levenshtein distance is lower than 0.8 are removed \cite{levenshtein1966binary}. 35,699 pairs were above this threshold (lexically matched pairs) and underwent further analysis.
 
 \subsection*{Co-occurrence Network}
@@ -270,7 +277,7 @@ Due to the diverse nature of the BioSamples data set, slicing attributes by spec
 
 \section*{Results}
 
-
+% Using the app how many pairs were typically curated in 10 minutes
 
 %How many attributes
 %Most frequent attributes
