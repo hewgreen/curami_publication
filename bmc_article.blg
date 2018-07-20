@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: bmc_article.aux
 The style file: bmc-mathphys.bst
@@ -20,49 +20,53 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bmc_article.bib
+Warning--entry type for "networkx" isn't style-file defined
+--line 79 of file bmc_article.bib
+Warning--I didn't find a database entry for "fig:gephi"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 11 entries,
+You've used 18 entries,
             7128 wiz_defined-function locations,
-            1193 strings with 12016 characters,
-and the built_in function-call counts, 82325 in all, are:
-= -- 9315
-> -- 544
-< -- 255
-+ -- 1376
-- -- 167
-* -- 7591
-:= -- 16612
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 139
-chr.to.int$ -- 455
-cite$ -- 11
-duplicate$ -- 1425
-empty$ -- 5614
-format.name$ -- 767
-if$ -- 17413
+            1240 strings with 13224 characters,
+and the built_in function-call counts, 131624 in all, are:
+= -- 16645
+> -- 776
+< -- 412
++ -- 4580
+- -- 209
+* -- 10194
+:= -- 25895
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 200
+chr.to.int$ -- 822
+cite$ -- 18
+duplicate$ -- 2065
+empty$ -- 7444
+format.name$ -- 937
+if$ -- 29234
 int.to.chr$ -- 1
-int.to.str$ -- 26
-missing$ -- 470
-newline$ -- 466
-num.names$ -- 55
-pop$ -- 560
+int.to.str$ -- 43
+missing$ -- 697
+newline$ -- 651
+num.names$ -- 90
+pop$ -- 812
 preamble$ -- 1
-purify$ -- 47
-quote$ -- 22
-skip$ -- 3951
+purify$ -- 78
+quote$ -- 36
+skip$ -- 8047
 stack$ -- 0
-substring$ -- 12731
-swap$ -- 460
-text.length$ -- 153
+substring$ -- 18304
+swap$ -- 699
+text.length$ -- 256
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 457
+type$ -- 758
 warning$ -- 0
-while$ -- 502
+while$ -- 726
 width$ -- 0
-write$ -- 717
+write$ -- 958
+(There were 2 warnings)

@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{11}
+\begin{thebibliography}{18}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -245,6 +245,100 @@ Scientific data
 \end{barticle}
 \endbibitem
 
+%%% 12
+\bibitem{networkx}
+\begin{botherref}
+\oauthor{\bsnm{Hagberg}, \binits{A.}},
+\oauthor{\bsnm{Schult}, \binits{D.}},
+\oauthor{\bsnm{Swart}, \binits{P.}}:
+NetworkX.
+\url{https://github.com/networkx/networkx}
+Accessed 13.4.18
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem{bastian2009gephi}
+\begin{barticle}
+\bauthor{\bsnm{Bastian}, \binits{M.}},
+\bauthor{\bsnm{Heymann}, \binits{S.}},
+\bauthor{\bsnm{Jacomy}, \binits{M.}}, \betal:
+\batitle{Gephi: an open source software for exploring and manipulating
+  networks.}
+\bjtitle{Icwsm}
+\bvolume{8},
+\bfpage{361}--\blpage{362}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{jacomy2014forceatlas2}
+\begin{barticle}
+\bauthor{\bsnm{Jacomy}, \binits{M.}},
+\bauthor{\bsnm{Venturini}, \binits{T.}},
+\bauthor{\bsnm{Heymann}, \binits{S.}},
+\bauthor{\bsnm{Bastian}, \binits{M.}}:
+\batitle{Forceatlas2, a continuous graph layout algorithm for handy network
+  visualization designed for the gephi software}.
+\bjtitle{PloS one}
+\bvolume{9}(\bissue{6}),
+\bfpage{98679}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{levenshtein1966binary}
+\begin{bchapter}
+\bauthor{\bsnm{Levenshtein}, \binits{V.I.}}:
+\bctitle{Binary codes capable of correcting deletions, insertions, and
+  reversals}.
+In: \bbtitle{Soviet Physics Doklady},
+vol. \bseriesno{10},
+pp. \bfpage{707}--\blpage{710}
+(\byear{1966})
+\end{bchapter}
+\endbibitem
+
+%%% 16
+\bibitem{fruchterman1991graph}
+\begin{barticle}
+\bauthor{\bsnm{Fruchterman}, \binits{T.M.}},
+\bauthor{\bsnm{Reingold}, \binits{E.M.}}:
+\batitle{Graph drawing by force-directed placement}.
+\bjtitle{Software: Practice and experience}
+\bvolume{21}(\bissue{11}),
+\bfpage{1129}--\blpage{1164}
+(\byear{1991})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{newman2006modularity}
+\begin{barticle}
+\bauthor{\bsnm{Newman}, \binits{M.E.}}:
+\batitle{Modularity and community structure in networks}.
+\bjtitle{Proceedings of the national academy of sciences}
+\bvolume{103}(\bissue{23}),
+\bfpage{8577}--\blpage{8582}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{jaccard1901distribution}
+\begin{barticle}
+\bauthor{\bsnm{Jaccard}, \binits{P.}}:
+\batitle{Distribution of the alpine flora in the dranse{\'\i}s basin and some
+  neighbouring regions}.
+\bjtitle{Bulletin de la Societe vaudoise des Sciences Naturelles}
+\bvolume{37},
+\bfpage{241}--\blpage{272}
+(\byear{1901})
+\end{barticle}
+\endbibitem
+
 \end{thebibliography}
 
 \newcommand{\BMCxmlcomment}[1]{}
@@ -477,6 +571,105 @@ Scientific data
   <volume>29</volume>
   <issue>4</issue>
   <fpage>365</fpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>NetworkX</p></title>
+  <aug>
+    <au><snm>Hagberg</snm><fnm>A</fnm></au>
+    <au><snm>Schult</snm><fnm>D</fnm></au>
+    <au><snm>Swart</snm><fnm>P</fnm></au>
+  </aug>
+  <url>https://github.com/networkx/networkx</url>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Gephi: an open source software for exploring and manipulating
+  networks.</p></title>
+  <aug>
+    <au><snm>Bastian</snm><fnm>M</fnm></au>
+    <au><snm>Heymann</snm><fnm>S</fnm></au>
+    <au><snm>Jacomy</snm><fnm>M</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Icwsm</source>
+  <pubdate>2009</pubdate>
+  <volume>8</volume>
+  <fpage>361</fpage>
+  <lpage>-362</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>ForceAtlas2, a continuous graph layout algorithm for handy network
+  visualization designed for the Gephi software</p></title>
+  <aug>
+    <au><snm>Jacomy</snm><fnm>M</fnm></au>
+    <au><snm>Venturini</snm><fnm>T</fnm></au>
+    <au><snm>Heymann</snm><fnm>S</fnm></au>
+    <au><snm>Bastian</snm><fnm>M</fnm></au>
+  </aug>
+  <source>PloS one</source>
+  <publisher>Public Library of Science</publisher>
+  <pubdate>2014</pubdate>
+  <volume>9</volume>
+  <issue>6</issue>
+  <fpage>e98679</fpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Binary codes capable of correcting deletions, insertions, and
+  reversals</p></title>
+  <aug>
+    <au><snm>Levenshtein</snm><fnm>VI</fnm></au>
+  </aug>
+  <source>Soviet physics doklady</source>
+  <pubdate>1966</pubdate>
+  <volume>10</volume>
+  <issue>8</issue>
+  <fpage>707</fpage>
+  <lpage>-710</lpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Graph drawing by force-directed placement</p></title>
+  <aug>
+    <au><snm>Fruchterman</snm><fnm>TM</fnm></au>
+    <au><snm>Reingold</snm><fnm>EM</fnm></au>
+  </aug>
+  <source>Software: Practice and experience</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>1991</pubdate>
+  <volume>21</volume>
+  <issue>11</issue>
+  <fpage>1129</fpage>
+  <lpage>-1164</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Modularity and community structure in networks</p></title>
+  <aug>
+    <au><snm>Newman</snm><fnm>ME</fnm></au>
+  </aug>
+  <source>Proceedings of the national academy of sciences</source>
+  <publisher>National Acad Sciences</publisher>
+  <pubdate>2006</pubdate>
+  <volume>103</volume>
+  <issue>23</issue>
+  <fpage>8577</fpage>
+  <lpage>-8582</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Distribution of the alpine flora in the dranse{\'\i}s basin and
+  some neighbouring regions</p></title>
+  <aug>
+    <au><snm>Jaccard</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Bulletin de la Societe vaudoise des Sciences Naturelles</source>
+  <pubdate>1901</pubdate>
+  <volume>37</volume>
+  <fpage>241</fpage>
+  <lpage>-272</lpage>
 </bibl>
 
 </refgrp>

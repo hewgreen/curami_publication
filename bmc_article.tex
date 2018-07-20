@@ -54,6 +54,7 @@
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+\usepackage{siunitx}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,7 +98,7 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Curami: an Assisted Attribute Curation Tool for the BioSamples Database.}
+\title{Curami: An Assisted Attribute Curation Tool for the BioSamples Database.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -208,9 +209,9 @@ Text for this section.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Background}
 
-Architects of biological databases are forced to decide which trade offs to make in order to best suit their data consumers and available resources. Whilst flexible validation and pliable data schema lower the barrier for initial data submission, the resulting poor data quality later incurs a high curation cost or reduced community benefit. Many tools have been built which aim to improve data quality whilst minimising incurred time and financial costs of operation and these can be broadly considered to follow either pre-data submission (validation) or post-data submission (curation) strategies [REF NEEDED]. Within these two strategies, the numerous tactics employed fall somewhere between fully automated or manual. Often increased manual effort correlates with increasing data value which again forces a compromised approach depending on the requirements of the resource \cite{goble2008data}. Nevertheless, there are successful applications that leverage the benefits of automated data assessment and combine this with expert manual curation to measurably increase the efficiency of manual curation efforts \cite{salgado2012myminer, salimi2006biocurator, szostak2015construction}.
+Architects of biological databases are forced to decide which trade offs to make in order to best balance the data consumer's downstream requirements, a data contributors input effort versus the value added benefits and the project's available resources. Whilst inexplicit validation and pliable data schema lower the barrier to initial data submission, this practice results in unstructured data that is difficult to reuse without incurring high curation costs. Many tools have been built which aim to improve data quality whilst minimising incurred financial and time costs. These tools broadly operate either pre-data submission (validation) or post-data submission (curation) [REF NEEDED]. Within these two strategies, the tools are spread on a scale between fully automated or fully manual. Often increased manual effort correlates with increased data value and diminishing throughput. Therefore, a tool should be designed to suit the requirements of the resource \cite{goble2008data}. Thankfully, there are applications that succesfully leverage the benefits of automated data assessment and combine this with expert manual curation to measurably increase the efficiency of manual curation efforts \cite{salgado2012myminer, salimi2006biocurator, szostak2015construction}.
 
-The BioSamples database at the European Bioinformatics Institute (EBI) is a metadata repository for all biological samples used to generate datasets across the EBI \cite{gostev2011biosample, faulconbridge2013updates}. The database consists of sample records which contain a unique BioSamples identifier, links to external data, relationships to other samples (derived from, child of etc.) and metadata expressed as key value pairs (note that keys are hereinafter referred to as attributes). As the database provides a single point of entry to metadata from a wide range of scientific domains and technologies, it allows users to create fields that are not predefined to suit their needs. Whilst this increases utility and flexibility for submitters, the dataset incurs redundancy and inconsistency. For example there are 22 different attributes that contain longitudes. Although BioSamples mitigates this problem by providing elastic search with ontology expansion, the samples returned may not necessarily be findable, accessible, interoperable and reusable, the universal targets defined as the FAIR principles \cite{wilkinson2016fair}. A snapshot of the dataset containing 4,790,415 sample records (taken on the 5th January 2018) was used for initial analysis. These samples contained 29,751 unique attributes used conjointly 45,275,314 times, giving a mean average of 9.45 attributes per sample record. The redundancy and inconsistency within the large number of attributes in the BioSamples database prompted the creation of the assisted-curation tool described herein.
+The BioSamples database at the European Bioinformatics Institute (EBI) is a metadata repository for all biological samples used to generate datasets across the EBI \cite{gostev2011biosample, faulconbridge2013updates}. The database consists of more than 4.5 million sample records which each contain a unique BioSamples identifier. Many records also have links to the sample's derived data in external databases, relationships to other samples (derived from, child of etc.) and sample metadata expressed as key value pairs (note that keys are hereinafter referred to as attributes). As the database provides a single point of entry to metadata from a wide range of scientific domains and technologies, it allows users to create fields that are not predefined to suit their needs. Whilst this increases utility and flexibility for submitters, the dataset incurs redundancy and inconsistency. For example there are 22 different attributes that contain longitudes. Although BioSamples mitigates this problem by providing elastic search with ontology expansion, the samples returned may not necessarily be findable, accessible, interoperable and reusable, the universal targets defined as the FAIR principles \cite{wilkinson2016fair}. A snapshot of the dataset containing 4,790,415 sample records (taken on the 5th January 2018) was used for initial analysis. These samples contained 29,751 unique attributes used conjointly 45,275,314 times, giving a mean average of 9.45 attributes per sample record. The redundancy and inconsistency within the large number of attributes in the BioSamples database prompted the creation of the assisted-curation tool described herein.
 
 The overarching goal was to provide a tool that facilitates the reduction of redundancy and inconsistency of the attributes in the BioSamples database, ultimately to reduce the total number of attributes in the database without loosing information. In order to achieve this, we aimed to identify pairs of attributes that were semantically similar enough to merge and to further identify the correct polarity of the merging. Although these aims differ from recent work to identify more generally topically related attributes in the Gene Expression Omnibus (GEO) \cite{edgar2002gene, barrett2012ncbi}, the strategy the authors employ highlighted some key challenges to solving this problem \cite{hu2017cleaning}. Whilst GEO encourages data submitters to conform to the Minimum Information About a Microarray Experiment (MIAME) guidelines \cite{brazma2001minimum}, similarly to BioSamples, the lack of a controlled vocabulary leads to the usage of different terms to represent the same concept. The authors developed a clustering methodology to group attributes that covered similar concepts and in doing so aim to separate curation activities into more manageable chunks. Unfortunately, applying clustering methodologies to data with heavily biased distributions leads to biased results which impedes semantic understanding. Furthermore as is the case of BioSamples, the majority of metadata submissions come from a few pipelines which may impose their own validation, recommendations and guidelines which lead to further bias and render frequency of term usage a less definitive predictive metric.
 
@@ -222,7 +223,35 @@ Source code and application documentation is available for inspection and reuse 
 
 \subsection*{Overview of Data and Work Flow}
 
-Curami's modular design is to aid reuse and adaption of the code (see Figure \ref{fig:workflow}). Initialization of the Neo4J analysis database
+Curami's modular design is to aid reuse and adaption of the code (see figure \ref{fig:workflow}). Prior to running the application, initialization is required to identify attribute pairs and calculate the various features described in table [ADD TABLE OF FEATURES]. This process is independently initiated and can be ran centrally and updated on a regular basis. In the first step of initialization, each sample record is requested via the BioSamples Application Programming Interface (API) and parsed into four input files. A CSV list of unique attributes and their frequency of usage, a CSV list of sample records (including the BioSamples ID and the attributes the sample contains), a CSV list of attribute pairs that co-occur within a sample record at least once with the frequency of the co-occurrence and a JSON file with unique values and their frequency of use for each unique attribute. The second step of initialisation uses these four files to create a network using the Python package networkX \cite{networkx} which is exported as a .gexf for later use by the co-occurrences analysis script. This graph contains nodes representing individual attributes and weighted edges with cco-occurrence can also be instantly visualised using Gephi \cite{bastian2009gephi} and explored using various inbuilt force-directed layout algorithms \cite{jacomy2014forceatlas2} (see Figure \cite{fig:gephi}). 29,751 attributes represent 885,092,250 potential pairs, excluding self-matches. Initially, to reduce this number for feature analysis pairs with a Levenshtein distance is lower than 0.8 are removed \cite{levenshtein1966binary}. 35,699 pairs were above this threshold (lexically matched pairs) and underwent further analysis.
+
+There are currently three modules that extract features from the lexically matched pairs. These aim to employ orthogonal measures of similarity and their separation encourages future development of new feature extraction methods (such as ontology analysis). In addition to the lexical pairwise filtering, the lexical analysis module also categorises the type of lexical miss match
+
+\subsection*{Co-occurrence Network}
+
+Co-occurrence refers to attributes that are used together within the same sample. By counting co-occurrence we can quantify a relationship between attributes and calculate a relationship weighting. A high frequency of co-occurrence may indicate that the attributes provide distinct information and therefore should not be merged. However due to the skewed distribution of attribute usage, highly popular attributes will co-occur more frequently than less popular attributes. To account for frequency of use when calculating co-occurrence weighting the following normalisation is performed.
+
+
+If $C(a_{1})$ is the number of occurrences of the first attribute, $C(a_{2})$ the number of occurrences of the second and $C(a_{t})$ the total occurrences of all attributes in the dataset. The probability of $C(a_{1})$ occurrence ($P_{(a1)}$) is:
+
+$\displaystyle P_{(a1)} = \frac{C(a_{1})}{C(a_{t})}$
+
+Therefore, we can calculate the expected co-occurrence ($E[x]$) if attributes were randomly paired:
+
+$\displaystyle E[x] = P_{(a1)} \cdot P_{(a2)} \cdot P_{(t)}$
+
+The observed co-occurrence ($O[x]$) for each pair is transformed into a normalised weight ($W_{(a1, a2)}$) like so:
+
+$\displaystyle W_{(a1, a2)} = \frac{O[x] - E[x]}{\sum (O[x] - E[x])}$
+
+These weights are used to create a NetworkX co-occurrence graph. If the frequency of co-occurrence is zero the weight will also be zero, although these edges are not explicitly calculated to reduce overhead. Equally the co-occurrence JSON only contains counts greater than zero. The theoretical weight range is +1 to -1 and all weights in the graph sum to 1. As the majority of BioSamples metadata records come from relatively few sources, downstream validation biases these weightings. For example, table \ref{table:pair_weights} a. shows the 5 strongest associated attributes which are all required in European Nucleotide Archive (ENA) checklists [REF]. Equally bias, table \ref{table:pair_weights} b. shows the weakest attribute associations [INSERT DESCRIPTION OF THESE HERE AFTER SPEAKING TO ENA]. Nevertheless, weights are often intuitively relevant. For example, table \ref{table:pair_weights} c. highlights three pairs that intuitively belong together (depth \& elevation, serovar \& strain and disease state \& individual) and two pairs that occupy contrary domains which intuitively don't overlap (organism part \& serovar and organism part \& environment biome). Individual attribute nodes are connected by the weights described above in a Neo4J subgraph (not connected to the graph layout shown in figure \ref{fig:workflow}) which powers the recommendation functionality in Curami.
+
+\subsection*{Attribute Recommendation}
+
+Due to the diverse nature of the BioSamples data set, slicing attributes by specialism is a very important curator requirement. Rather than predefining these slices the application allows the user to select attributes that are commonly associated with the dataset they are interested in, and uses this to suggest pairs that are relevant by looking at attributes that are closest according to the co-occurrence weighting. For example, a curator interested in marine metagenome samples could choose attributes [GIVE SOME SUGGESTIONS HERE THAT FIT WITH THE FIGURE]
+
+% make a figure showing screenshots of the recommendation functionality
+
 
 \subsection*{Calculated Data Features}
 
@@ -233,13 +262,22 @@ Curami's modular design is to aid reuse and adaption of the code (see Figure \re
 
 \section*{Results}
 
+%How many attributes
+%Most frequent attributes
+%distribution of attributes
+%distribution of values
+
 \section*{Discussion}
 
 Curami is designed to be used from two perspectives. As an assisted curation application it can be used to navigate the user through their domains of interest within the dataset and provide auxiliary information to the curator which may increase their confidence and allow them to make a curation decision. From a second perspective, this decision capture is incredibly useful as a training set to later discover in which circumstances the calculated features become predictive indicators of a required curation operation. Although this work has not explored analysis of the captured features, this second utility was a major contributing factor to the design of Curami. Displaying the right pairs to the curator and the information required to make decisions will aid the curation process [REF NEEDED] but the potential of later leveraging each of these decisions through machine learning will further increase a curators impact. However, the current lack of training data dictated that as a first step, Curami had to provide immediate utility whilst generating training data for later correlation analysis.
 
+% NB \ref{table:pair_weights} a. has colection date spelled wrong which is worth pointing out in the discussion
+
 % Need to address the lack of ontology work.
 
 \section*{Conclusion}
+
+% Further work. Looking for predictive features, especially orthogonal ones
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -303,8 +341,15 @@ Curami is designed to be used from two perspectives. As an assisted curation app
 \section*{Figures}
   \begin{figure}[h!]
   \caption{\csentence{Data and Work Flow}
-      Overview of the modular design of Curami showing separation of scripts and general dataflow. Initialization and analysis scripts 1-5 should be executed in series to pull information from the BioSamples API to generate input files, pair lexically similar attributes, extract pairwise and individual features and store the results in the Neo4J database. The Data Analysis Store has three node types User, Pair and Attribute with corresponding relationships as shown. Edges \textit{r1} represent curation decisions made by the user about a pair of attributes and can be one of four types; merge, merge with reversed polarity, don't merge and skip. Edged \textit{r2} has only one type, 'pair contains', and indicated which individual attributes are in the pair. The Curation Interface allows curators to view the attribute pairs sorted by applying one of the available settings described in section \ref{pair_sorting_settings}. Curation decisions are then stored in the Neo4J database which can then be directly converted into curation objects, a format that can be directly submitted to the BioSamples API.}
+      Overview of the modular design of Curami showing separation of modules and general dataflow. Initialization and analysis modules 1-5 should be executed in series to pull information from the BioSamples API to generate input files, pair lexically similar attributes, extract pairwise and individual features and store the results in the Neo4J database. The Data Analysis Store has three node types User, Pair and Attribute with corresponding relationships as shown. Edges \textit{r1} represent curation decisions made by the user about a pair of attributes and can be one of four types; merge, merge with reversed polarity, don't merge and skip. Edged \textit{r2} has only one type, 'pair contains', and indicated which individual attributes are in the pair. The Curation Interface allows curators to view the attribute pairs sorted by applying one of the available settings described in section \ref{pair_sorting_settings}. Curation decisions are then stored in the Neo4J database which can then be directly converted into curation objects, a format that can be directly submitted to the BioSamples API.}
 \label{fig:workflow}
+\end{figure}
+
+  \begin{figure}[h!]
+  \caption{\csentence{Gephi snapshot} 
+  Snapshot from the interactive network layout tool Gephi \cite{bastian2009gephi}. Each attribute is a node and the node size represents the approximate frequency of attribute usage (size is binned rather than scaled). The Fruchterman-Reingold layout \cite{fruchterman1991graph} uses cooccurance weighting captured on the edges which are represented as grey lines between nodes. Colour assignment was done using the inbuilt Newman's modularity function \cite{newman2006modularity} to loosely highlight node clusters. Some specific attributes  are labelled along with some large clusters that show many attributes related to 'human metagenome' samples and a commonly used 'medical screen'.
+  }
+\label{fig:gephi}
 \end{figure}
 
 %\begin{figure}[h!]
@@ -320,17 +365,104 @@ Curami is designed to be used from two perspectives. As an assisted curation app
 
 %% Use of \listoftables is discouraged.
 %%
-%\section*{Tables}
-%\begin{table}[h!]
-%\caption{Sample table title. This is where the description of the table should go.}
-%      \begin{tabular}{cccc}
-%        \hline
-%           & B1  &B2   & B3\\ \hline
-%        A1 & 0.1 & 0.2 & 0.3\\
-%        A2 & ... & ..  & .\\
-%        A3 & ..  & .   & .\\ \hline
-%      \end{tabular}
-%\end{table}
+\section*{Tables}
+\begin{table}[h!]
+\caption{A table of analysis features calculated for each attribute pair.}
+      \begin{tabular}{|p{3cm}|p{10cm}|}
+        \hline
+           Feature & Description  \\ \hline
+           Levenshtein Distance &  \cite{levenshtein1966binary}. N.B. pairs that score < 0.8 are not included. \\
+           Attribute 1 frequency & The frequency of usage of attribute 1. This is used to predict the polarity of the merge. This assumes that the most popular attribute is most likely to be correct. \\
+           Attribute 2 frequency & The frequency of usage of attribute 2.  \\
+           Discrepancy Type & The result of several lexical tests (see table \ref{table:lexical_catagorisation}) \\
+           Camel Case & Boolean indicating lexical detection of potential camel case usage. \\
+           Edge Weight & placeholder \\
+           Jaccard Coefficient \cite{jaccard1901distribution} & Calculated using the co-occurrence NetworkX graph. Quantifies the overlap of usage between attributes which may not directly co-occur (have a weighted edge in the graph). \\
+           Break Number & placeholder \\
+           Degree & placeholder \\
+           Edge Total & placeholder \\
+           Value Match Type & Can be either numeric, date or string match if more than 90\% of the values adhere to one data type. Alternatively, the field will show a mixed match or no match. \\
+           Order of Magnitude & placeholder \\
+           Jaro Score & placeholder \\ \hline
+      \end{tabular}
+\label{table:features}
+\end{table}
+
+\begin{table}[h!]
+\caption{These tests aim to catagorize the lexical difference between the lexically similar attributes. $^\ddagger$ are strong candidates for automated curation.}
+      \begin{tabular}{|p{3.5cm}|p{9.5cm}|}
+        \hline
+        Lexical Catagory & Description of Difference Test  \\ \hline
+        Number Discrepancy & A numerical character differentiates the attributes. \\
+        Case Discrepancy & If case stripping improves the Levenshtein score, case is identified as at least one differential factor. \\
+        Space Discrepancy & Indicates if a space is at least one part of the discrepancy. \\
+        Only Space Discrepancy$^\ddagger$  & If a space difference is the only difference between the attributes. \\
+        Specials Discrepancy & If special characters are partially responsible for the difference. \\
+        Just Specials Discrepancy$^\ddagger$ & If special characters are the only difference between the attributes. \\
+        Word Number Discrepancy & If the number of tokens in the attributes differ. \\
+        Stop Word Discrepancy & If the difference is due to the presence of stopwords (from the NLTK corpus imported from nltk.corpus import stopwords).  \\
+        Dictionary Matching & Triggered if there is a difference in spelling between the attribute's tokens (so ignoring equally misspelled tokens) that fail a dictionary test against enchants US dictionary after stripping numbers, case and special characters. \\
+        Lemmatisation Matching &  If lemmatisation or stemming produces an identical match. \\
+        S discrepancy$^\ddagger$  & If an additional 's' character is the only difference between attributes. \\
+
+           \hline
+      \end{tabular}
+\label{table:lexical_catagorisation}
+\end{table}
+
+% Note that space discrepancies will not be calculated if camel cased attributes are detected.
+% dictionary not currently supplemented but could be in the future: supplemented with a large custom dictionary created using labels from all the ontologies captured via https://www.ebi.ac.uk/rdf.
+% Lemmatisation and stemming are similar processes that strip a word back to its core. This is intended to find issues such as pluralisation or e.g. geographical vs geographically. If the only difference between facets is the addition of an 's' to the end of one of the tokens this is recorded separately with the test s_discrepancy and a slight variation sLower_discrepancy. In the latter, the only difference is the 's' ending and case differences. These are very good candidates for automated curation.
+
+
+\begin{table}[h!]
+\caption{a. Most strongly associated and b. weakly associated pairs ranked by co-occurrence weighting. c. Highlights pairs that demonstrate intuitive validation of the weighted ranking.}
+      \begin{tabular}{|p{1cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|}
+
+        \multicolumn{2}{l}{\textbf{a. Strongest attribute associations}}  \\ \hline
+        Rank & Attribute Name & Second Attribute Name & $W_{(a1, a2)}$  \\ \hline
+	1 & package & synonym & \num{6.94e-04} \\
+	2 & model & synonym & \num{6.94e-04} \\
+	3 & colection date & geographic location & \num{4.45e-04} \\
+        4 & geographic location & package & \num{4.43e-04} \\
+        5 & geographic location & model & \num{4.43e-04} \\ \hline
+        
+        \multicolumn{2}{l}{} \\
+        
+         \multicolumn{2}{l}{\textbf{b. Weakest attribute associations }}  \\ \hline
+        Rank & Attribute Name & Second Attribute Name & $W_{(a1, a2)}$  \\ \hline
+	710293 & Sample source name & synonym & \num{-2.54e-04} \\
+	710294 & Sample\_source\_name & model & \num{-2.87e-04} \\
+	710295 & description & model & \num{-4.06e-04} \\
+        710296 & description & package & \num{-4.07e-04} \\
+        710297 & Sample\_source\_name & synonym & \num{-4.17e-04} \\ \hline
+        
+         \multicolumn{2}{l}{} \\
+        
+         \multicolumn{2}{l}{\textbf{c. Highlighted pairs}}  \\ \hline
+        Rank & Attribute Name & Second Attribute Name & $W_{(a1, a2)}$  \\ \hline
+        107 & depth & elevation & \num{8.72e-05} \\
+         251 & serovar & strain & \num{5.90e-05} \\
+         363 & disease state & individual & \num{4.84e-05} \\
+	710117 & organism part & serovar & \num{-2.38e-05} \\
+	710223 & environment biome & organism part & \num{-5.24e-05} \\
+	
+	
+	
+
+
+ \hline
+        
+      \end{tabular}
+
+      
+\label{table:pair_weights}
+\end{table}
+
+%These negative weights are often intuitively relevant (e.g. organism part and serovar with a difference of -27689 (weight -2.38e-05) or environment biome and organism part with a difference of -89490 (weight -5.24e-05)) and highly positive weights are also intuitive (e.g. depth and elevation with a difference of 99617 (weight 8.72e-05)).
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
