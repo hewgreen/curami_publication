@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.20)  20 JUL 2018 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.20)  20 JUL 2018 13:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -585,7 +585,7 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 
 ]
 
-LaTeX Warning: Citation `fig:gephi' on page 2 undefined on input line 226.
+LaTeX Warning: Citation `fig:gephi' on page 2 undefined on input line 230.
 
 [2] [3] (./bmc_article.bbl [4]
 
@@ -595,11 +595,15 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
 
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 344.
+(Font)              <8> on input line 356.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 344.
+(Font)              <6> on input line 356.
 
-Overfull \hbox (34.0858pt too wide) in paragraph at lines 371--389
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (34.0858pt too wide) in paragraph at lines 383--401
  [][] 
  []
 
@@ -607,7 +611,7 @@ Overfull \hbox (34.0858pt too wide) in paragraph at lines 371--389
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (34.0858pt too wide) in paragraph at lines 393--411
+Overfull \hbox (34.0858pt too wide) in paragraph at lines 405--423
  [][] 
  []
 
@@ -619,11 +623,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 AED: lastpage setting LastPage
-[5]
-
-LaTeX Warning: Text page 6 contains only floats.
-
-[6] (./bmc_article.aux)
+[5] [6] [7] (./bmc_article.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -635,7 +635,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  12614 strings out of 492649
  263758 string characters out of 6129622
- 308917 words of memory out of 5000000
+ 310917 words of memory out of 5000000
  16482 multiletter control sequences out of 15000+600000
  538974 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -659,10 +659,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive
 8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on bmc_article.pdf (6 pages, 213222 bytes).
+Output written on bmc_article.pdf (7 pages, 213757 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
