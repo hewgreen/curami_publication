@@ -20,7 +20,11 @@
 \citation{bastian2009gephi}
 \citation{jacomy2014forceatlas2}
 \citation{fig:gephi}
-\newlabel{pair_sorting_settings}{{}{4}}
+\citation{levenshtein1966binary}
+\citation{levenshtein1966binary}
+\citation{jaccard1901distribution}
+\citation{hagberg2008exploring}
+\newlabel{pair_sorting_settings}{{}{6}}
 \bibstyle{bmc-mathphys}
 \bibdata{bmc_article}
 \bibcite{goble2008data}{1}
@@ -38,24 +42,29 @@
 \bibcite{bastian2009gephi}{13}
 \bibcite{jacomy2014forceatlas2}{14}
 \bibcite{levenshtein1966binary}{15}
-\bibcite{fruchterman1991graph}{16}
-\bibcite{newman2006modularity}{17}
-\bibcite{jaccard1901distribution}{18}
+\bibcite{jaccard1901distribution}{16}
+\bibcite{hagberg2008exploring}{17}
+\bibcite{fruchterman1991graph}{18}
+\bibcite{newman2006modularity}{19}
 \citation{bastian2009gephi}
 \citation{fruchterman1991graph}
 \citation{newman2006modularity}
 \citation{levenshtein1966binary}
 \citation{jaccard1901distribution}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces {\mathversion  {bold}\bfseries  Data and Work Flow} Overview of the modular design of Curami showing separation of modules and general dataflow. Initialization and analysis modules 1-5 should be executed in series to pull information from the BioSamples API to generate input files, pair lexically similar attributes, extract pairwise and individual features and store the results in the Neo4J database. The Data Analysis Store has three node types User, Pair and Attribute with corresponding relationships as shown. Edges \textit  {r1} represent curation decisions made by the user about a pair of attributes and can be one of four types; merge, merge with reversed polarity, don't merge and skip. Edged \textit  {r2} has only one type, 'pair contains', and indicated which individual attributes are in the pair. The Curation Interface allows curators to view the attribute pairs sorted by applying one of the available settings described in section \hbox {}. Curation decisions are then stored in the Neo4J database which can then be directly converted into curation objects, a format that can be directly submitted to the BioSamples API.}}{5}}
-\newlabel{fig:workflow}{{1}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  Gephi snapshot} Snapshot from the interactive network layout tool Gephi \cite  {bastian2009gephi}. Each attribute is a node and the node size represents the approximate frequency of attribute usage (size is binned rather than scaled). The Fruchterman-Reingold layout \cite  {fruchterman1991graph} uses cooccurance weighting captured on the edges which are represented as grey lines between nodes. Colour assignment was done using the inbuilt Newman's modularity function \cite  {newman2006modularity} to loosely highlight node clusters. Some specific attributes are labelled along with some large clusters that show many attributes related to 'human metagenome' samples and a commonly used 'medical screen'. }}{6}}
-\newlabel{fig:gephi}{{2}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces A table of analysis features calculated for each attribute pair.}}{6}}
-\newlabel{table:features}{{1}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces These tests aim to catagorize the lexical difference between the lexically similar attributes. $^\ddagger $ are strong candidates for automated curation.}}{6}}
-\newlabel{table:lexical_catagorisation}{{2}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces a. Most strongly associated and b. weakly associated pairs ranked by co-occurrence weighting. c. Highlights pairs that demonstrate intuitive validation of the weighted ranking.}}{7}}
-\newlabel{table:pair_weights}{{3}{7}}
-\newlabel{LastPage}{{}{7}}
-\xdef\lastpage@lastpage{7}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces {\mathversion  {bold}\bfseries  Data Flow} During initialization Curami crawls BioSamples using the API and generates four input files. The input files are used to populate a Neo4J database which is further populated with co-occurrence weighting and other pairwise measurements shown in table 1\hbox {}. The flask app Curami uses cypher queries to find attribute pairs to display to the user. As the user takes curation decisions these are stored in the Neo4J DB which can then be used to periodically create curation objects that can be posted back to the BioSamples API. }}{9}}
+\newlabel{fig:dataflow}{{1}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  Gephi snapshot} Snapshot from the interactive network layout tool Gephi \cite  {bastian2009gephi}. Each attribute is a node and the node size represents the approximate frequency of attribute usage (size is binned rather than scaled). The Fruchterman-Reingold layout \cite  {fruchterman1991graph} uses cooccurance weighting captured on the edges which are represented as grey lines between nodes. Colour assignment was done using the inbuilt Newman's modularity function \cite  {newman2006modularity} to loosely highlight node clusters. Some specific attributes are labelled along with some large clusters that show many attributes related to 'human metagenome' samples and a commonly used 'medical screen'. }}{9}}
+\newlabel{fig:gephi}{{2}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\mathversion  {bold}\bfseries  Attribute Pairing} Overview of the modular design of Curami showing separation of modules and general dataflow. Initialization and analysis modules 1-5 should be executed in series to pull information from the BioSamples API to generate input files, pair lexically similar attributes, extract pairwise and individual features and store the results in the Neo4J database. The Data Analysis Store has three node types; User, Pair and Attribute, with corresponding relationships as shown. Edges \textit  {r1} represent curation decisions made by the user about a pair of attributes and can be one of four types; merge, merge with reversed polarity, don't merge and skip. Edged \textit  {r2} has only one type, 'pair contains', and indicates which individual attributes are in the pair. The Curation Interface allows curators to view the attribute pairs sorted by applying one of the available settings. Curation decisions are then stored in the Neo4J database which can then be directly converted into curation objects, a format that can be directly submitted to the BioSamples API.}}{10}}
+\newlabel{fig:pairing}{{3}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\mathversion  {bold}\bfseries  frequency of attribute occurrence} A, B}}{10}}
+\newlabel{fig:frequency}{{4}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces A table of analysis features calculated for each attribute pair.}}{10}}
+\newlabel{table:features}{{1}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces These tests aim to catagorize the lexical difference between the lexically similar attributes. $^\ddagger $ are strong candidates for automated curation.}}{10}}
+\newlabel{table:lexical_catagorisation}{{2}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces a. Most strongly associated and b. weakly associated pairs ranked by co-occurrence weighting. c. Highlights pairs that demonstrate intuitive validation of the weighted ranking.}}{11}}
+\newlabel{table:pair_weights}{{3}{11}}
+\newlabel{LastPage}{{}{11}}
+\xdef\lastpage@lastpage{11}
 \gdef\lastpage@lastpageHy{}

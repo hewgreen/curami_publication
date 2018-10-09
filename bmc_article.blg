@@ -21,52 +21,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bmc_article.bib
 Warning--entry type for "networkx" isn't style-file defined
---line 79 of file bmc_article.bib
+--line 87 of file bmc_article.bib
 Warning--I didn't find a database entry for "fig:gephi"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 18 entries,
+You've used 19 entries,
             7128 wiz_defined-function locations,
-            1240 strings with 13224 characters,
-and the built_in function-call counts, 131624 in all, are:
-= -- 16645
-> -- 776
-< -- 412
-+ -- 4580
-- -- 209
-* -- 10194
-:= -- 25895
-add.period$ -- 18
-call.type$ -- 18
-change.case$ -- 200
-chr.to.int$ -- 822
-cite$ -- 18
-duplicate$ -- 2065
-empty$ -- 7444
-format.name$ -- 937
-if$ -- 29234
+            1244 strings with 13423 characters,
+and the built_in function-call counts, 135886 in all, are:
+= -- 17204
+> -- 798
+< -- 419
++ -- 4709
+- -- 218
+* -- 10495
+:= -- 26809
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 211
+chr.to.int$ -- 823
+cite$ -- 19
+duplicate$ -- 2140
+empty$ -- 7674
+format.name$ -- 969
+if$ -- 30162
 int.to.chr$ -- 1
-int.to.str$ -- 43
-missing$ -- 697
-newline$ -- 651
-num.names$ -- 90
-pop$ -- 812
+int.to.str$ -- 47
+missing$ -- 731
+newline$ -- 674
+num.names$ -- 95
+pop$ -- 861
 preamble$ -- 1
-purify$ -- 78
-quote$ -- 36
-skip$ -- 8047
+purify$ -- 84
+quote$ -- 38
+skip$ -- 8298
 stack$ -- 0
-substring$ -- 18304
-swap$ -- 699
-text.length$ -- 256
+substring$ -- 18857
+swap$ -- 708
+text.length$ -- 271
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 758
+type$ -- 787
 warning$ -- 0
-while$ -- 726
+while$ -- 754
 width$ -- 0
-write$ -- 958
+write$ -- 991
 (There were 2 warnings)

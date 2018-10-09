@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -302,6 +302,32 @@ pp. \bfpage{707}--\blpage{710}
 \endbibitem
 
 %%% 16
+\bibitem{jaccard1901distribution}
+\begin{barticle}
+\bauthor{\bsnm{Jaccard}, \binits{P.}}:
+\batitle{Distribution of the alpine flora in the dranse{\'\i}s basin and some
+  neighbouring regions}.
+\bjtitle{Bulletin de la Societe vaudoise des Sciences Naturelles}
+\bvolume{37},
+\bfpage{241}--\blpage{272}
+(\byear{1901})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{hagberg2008exploring}
+\begin{botherref}
+\oauthor{\bsnm{Hagberg}, \binits{A.}},
+\oauthor{\bsnm{Swart}, \binits{P.}},
+\oauthor{\bsnm{S~Chult}, \binits{D.}}:
+Exploring network structure, dynamics, and function using networkx.
+Technical report,
+Los Alamos National Lab.(LANL), Los Alamos, NM (United States)
+(2008)
+\end{botherref}
+\endbibitem
+
+%%% 18
 \bibitem{fruchterman1991graph}
 \begin{barticle}
 \bauthor{\bsnm{Fruchterman}, \binits{T.M.}},
@@ -314,7 +340,7 @@ pp. \bfpage{707}--\blpage{710}
 \end{barticle}
 \endbibitem
 
-%%% 17
+%%% 19
 \bibitem{newman2006modularity}
 \begin{barticle}
 \bauthor{\bsnm{Newman}, \binits{M.E.}}:
@@ -323,19 +349,6 @@ pp. \bfpage{707}--\blpage{710}
 \bvolume{103}(\bissue{23}),
 \bfpage{8577}--\blpage{8582}
 (\byear{2006})
-\end{barticle}
-\endbibitem
-
-%%% 18
-\bibitem{jaccard1901distribution}
-\begin{barticle}
-\bauthor{\bsnm{Jaccard}, \binits{P.}}:
-\batitle{Distribution of the alpine flora in the dranse{\'\i}s basin and some
-  neighbouring regions}.
-\bjtitle{Bulletin de la Societe vaudoise des Sciences Naturelles}
-\bvolume{37},
-\bfpage{241}--\blpage{272}
-(\byear{1901})
 \end{barticle}
 \endbibitem
 
@@ -631,6 +644,30 @@ pp. \bfpage{707}--\blpage{710}
 </bibl>
 
 <bibl id="B16">
+  <title><p>Distribution of the alpine flora in the dranse{\'\i}s basin and
+  some neighbouring regions</p></title>
+  <aug>
+    <au><snm>Jaccard</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Bulletin de la Societe vaudoise des Sciences Naturelles</source>
+  <pubdate>1901</pubdate>
+  <volume>37</volume>
+  <fpage>241</fpage>
+  <lpage>-272</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Exploring network structure, dynamics, and function using
+  NetworkX</p></title>
+  <aug>
+    <au><snm>Hagberg</snm><fnm>A</fnm></au>
+    <au><snm>Swart</snm><fnm>P</fnm></au>
+    <au><snm>S Chult</snm><fnm>D</fnm></au>
+  </aug>
+  <pubdate>2008</pubdate>
+</bibl>
+
+<bibl id="B18">
   <title><p>Graph drawing by force-directed placement</p></title>
   <aug>
     <au><snm>Fruchterman</snm><fnm>TM</fnm></au>
@@ -645,7 +682,7 @@ pp. \bfpage{707}--\blpage{710}
   <lpage>-1164</lpage>
 </bibl>
 
-<bibl id="B17">
+<bibl id="B19">
   <title><p>Modularity and community structure in networks</p></title>
   <aug>
     <au><snm>Newman</snm><fnm>ME</fnm></au>
@@ -657,19 +694,6 @@ pp. \bfpage{707}--\blpage{710}
   <issue>23</issue>
   <fpage>8577</fpage>
   <lpage>-8582</lpage>
-</bibl>
-
-<bibl id="B18">
-  <title><p>Distribution of the alpine flora in the dranse{\'\i}s basin and
-  some neighbouring regions</p></title>
-  <aug>
-    <au><snm>Jaccard</snm><fnm>P</fnm></au>
-  </aug>
-  <source>Bulletin de la Societe vaudoise des Sciences Naturelles</source>
-  <pubdate>1901</pubdate>
-  <volume>37</volume>
-  <fpage>241</fpage>
-  <lpage>-272</lpage>
 </bibl>
 
 </refgrp>
